@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --breakpoints-desktop: 1440px;
+  --card-max-width: 30rem;
+  /* Colors */
+  --clr-blue-500: hsl(215, 51%, 70%);
+  --clr-cyan-400: hsl(178, 100%, 50%);
+  --clr-cyan-400-rgb: 0, 255, 247;
+
+  --clr-blue-950: hsl(217, 54%, 11%);
+  --clr-blue-900: hsl(216, 50%, 16%);
+  --clr-blue-800: hsl(215, 32%, 27%);
+  --clr-white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--clr-blue-950);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.main {
+  padding: 4rem 1.5rem;
+}
+
+.card {
+  padding: 1.5rem;
+  background-color: var(--clr-blue-900);
+  border-radius: 1rem;
+
+  width: min(90%, var(--card-max-width));
+  margin: 0 auto;
+}
+
+.card__image {
+  position: relative;
+  border-radius: 1rem;
+
+  img {
+    border-radius: 1rem;
+  }
+}
+
+.card__image::after {
+  cursor: pointer;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--clr-cyan-400-rgb), 0.4);
+  opacity: 0;
+  border-radius: 1rem;
+  background-image: url('images/icon-view.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.25s;
+}
+
+.card__image:hover::after {
+  cursor: pointer;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--clr-cyan-400-rgb), 0.4);
+  opacity: 1;
+  border-radius: 1rem;
+  background-image: url('images/icon-view.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__title {
+  margin-block-start: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.card__description {
+  font-size: 1rem;
+  color: var(--clr-blue-500);
+  margin-block-start: 1.5rem;
+}
+
+.card__information {
+  margin-block-start: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__price,
+.card__time {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card__price > p {
+  color: var(--clr-cyan-400);
+}
+
+.card__time > p {
+  color: var(--clr-blue-500);
+}
+
+.etherium-icon {
+  width: 16px;
+}
+
+.clock-icon {
+  width: 20px;
+}
+
+.divider {
+  width: 100%;
+  border: 0.5px solid var(--clr-blue-500);
+  margin-block-start: 1rem;
+}
+
+.card__author {
+  margin-block-start: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--clr-blue-500);
+}
+
+.card__author > p > span {
+  color: white;
+}
+
+.card__author > .avatar {
+  width: 36px;
+  height: 36px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
